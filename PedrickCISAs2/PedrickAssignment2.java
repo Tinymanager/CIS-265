@@ -1,17 +1,22 @@
+package PedrickCISAs2;
 import java.util.Scanner;
-public class PedrickCISAs2 {
+public class PedrickAssignment2 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        int[] BankAccount;
         while (true){
             System.out.println("Please input the number of bank accounts to create (1-10): ");
             int numinput = input.nextInt();
             input.nextLine();
             if (numinput >0 && numinput <11){
-                int[]BankAccount = new int[numinput];
+                BankAccount = new int[numinput];
                 break;
             } else {
                 System.out.println("I cannot create " + numinput + " bank accounts!");
             }
+        }
+        for (int i=0; i<BankAccount.length; i++){
+            //Take the inputs for the details
         }
         //Search the array after the accounts are done being made
         
@@ -20,10 +25,6 @@ public class PedrickCISAs2 {
 //create and search the array
 
 //create an array of BankAccount
-}
-
-class BankAccount{
-//Used to handle objects (bank accounts)
 }
 
 /*Ask the user to input the number of bank accounts that will be created
