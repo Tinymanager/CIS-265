@@ -1,7 +1,20 @@
 import java.util.Scanner;
 public class PedrickCISAs2 {
     public static void main(String[] args) {
-
+        Scanner input = new Scanner(System.in);
+        while (true){
+            System.out.println("Please input the number of bank accounts to create (1-10): ");
+            int numinput = input.nextInt();
+            input.nextLine();
+            if (numinput >0 && numinput <11){
+                int[]BankAccount = new int[numinput];
+                break;
+            } else {
+                System.out.println("I cannot create " + numinput + " bank accounts!");
+            }
+        }
+        //Search the array after the accounts are done being made
+        
     }
 //process the input and output
 //create and search the array
