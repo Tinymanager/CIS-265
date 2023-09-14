@@ -3,13 +3,13 @@ import java.util.Scanner;
 public class PedrickAssignment2 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int[] BankAccount;
+        BankAccount[] BankAccount;
         while (true){
             System.out.println("Please input the number of bank accounts to create (1-10): ");
             int numinput = input.nextInt();
             input.nextLine();
             if (numinput >0 && numinput <11){
-                BankAccount = new int[numinput];
+                BankAccount = new BankAccount[numinput];
                 break;
             } else {
                 System.out.println("I cannot create " + numinput + " bank accounts!");
@@ -17,25 +17,17 @@ public class PedrickAssignment2 {
         }
         for (int i=0; i<BankAccount.length; i++){
             //Take the inputs for the details
+            System.out.println("Bank Account " + (i+1) + " owner: ");
+            String OwnerName = input.nextLine();
+            System.out.println("Bank Account " + (i+1) + " account number: ");
+            int AccntNumber = input.nextInt();
+            input.nextLine();
+            System.out.println("Bank Account " + (i+1) + " balance: ");
+            Double AccntBalance = input.nextDouble();
+            BankAccount[i] = new BankAccount(OwnerName, AccntNumber, AccntBalance);
         }
         //Search the array after the accounts are done being made
         
     }
-//process the input and output
-//create and search the array
 
-//create an array of BankAccount
 }
-
-/*Ask the user to input the number of bank accounts that will be created
-The number should be 1-10
-Otherwise it should say it can't create that many accounts and go again
-Each element of the array will refer to a bank account
-Prompt the user to input details of each bank account
-Details: owner, number, and balance
-Use the BankAccount constructor to create a BankAccount object
-Assign the object to an array element and have the details
-
-
-
-*/
