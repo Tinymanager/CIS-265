@@ -12,30 +12,14 @@ public class BankAccount {
         this.OwnerName = OwnerN;
         this.AccntNumber = AccntNum;
         this.AccntBalance = AccntBal;
-
-    }
-
-    public void NameSetter(String OwnerN){
-        OwnerName = OwnerN;
-    }
-    public String NameGetter(){
-        return OwnerName;
-    }
-
-    public void AccntNumberSetter(int AccntNum){
-        AccntNumber = AccntNum;
-    }
-    public int AccntNumberGetter(){
-        return AccntNumber;
-    }
-
-    public void BalanceSetter(Double AccntBal){
-        AccntBalance = AccntBal;
-    }
-    public Double BalanceGetter(){
-        return AccntBalance;
+        //this.PrintBankAccount(OwnerName, AccntNumber, AccntBalance);
     }
 
     //PrintBankAccount method
+    public void PrintBankAccount(String OwnerN, int AccntNum, Double AccntBal){
+        System.out.println("Owner: " + OwnerN);
+        System.out.println("Number: " + AccntNum);
+        System.out.println("Balance: " + AccntBal);
+    }
 }
 

@@ -17,17 +17,39 @@ public class PedrickAssignment2 {
         }
         for (int i=0; i<BankAccount.length; i++){
             //Take the inputs for the details
-            System.out.println("Bank Account " + (i+1) + " owner: ");
+            System.out.print("Bank Account " + (i+1) + " owner: ");
             String OwnerName = input.nextLine();
-            System.out.println("Bank Account " + (i+1) + " account number: ");
+            System.out.print("Bank Account " + (i+1) + " account number: ");
             int AccntNumber = input.nextInt();
             input.nextLine();
-            System.out.println("Bank Account " + (i+1) + " balance: ");
+            System.out.print("Bank Account " + (i+1) + " balance: ");
             Double AccntBalance = input.nextDouble();
+            input.nextLine();
             BankAccount[i] = new BankAccount(OwnerName, AccntNumber, AccntBalance);
         }
         //Search the array after the accounts are done being made
+        while (true){
+            System.out.println("Enter an account number to search (enter -1 to quit): ");
+            int accntInput = input.nextInt();
+            if (accntInput == -1){
+                System.out.println("Goodybe!");
+                break;
+            }
+            BankAccount BnkAccnt = new BankAccount();
+            for (int i=0; i<BankAccount.length; i++){
+                if (BankAccount[i].AccntNumber == accntInput){
+                    BnkAccnt.PrintBankAccount(BankAccount[i].OwnerName, BankAccount[i].AccntNumber, BankAccount[i].AccntBalance);
+                }
+            }
+        }
         
     }
 
 }
+
+/*
+ * Name: Ethan Pedrick
+ * CSU ID: 2835438
+ * CIS 265: Assignment 2
+ * Description: Creating and Searching Bank Accounts
+ */
