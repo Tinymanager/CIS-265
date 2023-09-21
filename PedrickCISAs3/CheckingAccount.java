@@ -13,7 +13,7 @@ public class CheckingAccount extends BankAccount{
         this.CheckLimit = CheckLim;
     }
     
-    public void PrintBankAccount(String OwnerN, int AccntNum, Double AccntBal, int CheckLim){
+    public static void PrintBankAccount(String OwnerN, int AccntNum, Double AccntBal, int CheckLim){
         System.out.println("Owner: " + OwnerN);
         System.out.println("Number: " + AccntNum);
         System.out.println("Balance: " + AccntBal);
