@@ -69,17 +69,8 @@ public class Pedrick3 {
 
 
 /*
- * Use a loop to ask if more bank accounts need to be created
- * then create an account, then loop back to the question
- * If the user says no more accounts to made
- * End the loop and enter search mode
- * Loop:
- * user inputs details of: type, owner, number, and balance
- * checking accnt also asks for limit on number of checks in a month
- * savings accnt also asks for the interest rate
- * 
- * Search Mode:
- * ask user for account number
- * print the accnt info
- * use "-1" to end search
+ * Name: Ethan Pedrick
+ * CSU ID: 2835438
+ * CIS 265: Assignment 3
+ * Description: Creating and Searching Checkings and Savings Accounts
  */
