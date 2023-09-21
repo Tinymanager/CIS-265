@@ -10,10 +10,10 @@ public class Pedrick3 {
         int counter = 0;
         while (true){
             System.out.println("Do you want to create more accounts (Y or N): ");
-            if (input.nextLine() == "Y"){
+            if (input.next().equals("Y")){
                 counter++;
                 System.out.println("Is account " + counter + " a checking account or a savings account? (C or S)");
-                if (input.nextLine() == "C"){
+                if (input.nextLine().equals("C")){
                     System.out.print("Bank Account " + counter + " owner: ");
                     String OwnerName = input.nextLine();
                     System.out.print("Bank Account " + counter + " account number: ");
@@ -25,7 +25,7 @@ public class Pedrick3 {
                     System.out.println("Bank account " + counter + " check limit: ");
                     int CheckLimit = input.nextInt();
                     input.nextLine();
-                } else if (input.nextLine() == "S"){
+                } else if (input.nextLine().equals("S")){
                     System.out.print("Bank Account " + counter + " owner: ");
                     String OwnerName = input.nextLine();
                     System.out.print("Bank Account " + counter + " account number: ");
@@ -38,7 +38,7 @@ public class Pedrick3 {
                     Double CheckLimit = input.nextDouble();
                     input.nextLine();
                 }
-            } else if (input.nextLine() == "N"){
+            } else if (input.nextLine().equals("N")){
                 break;
             }
         }
