@@ -22,6 +22,7 @@ public class BankAccount {
     public int getNumber(){
         return AccntNumber;
     }
+
 }
 
 

@@ -13,10 +13,8 @@ public class SavingsAccount extends BankAccount{
         this.AccntInterest = Interest;
     }
 
-    public static void PrintBankAccount(String OwnerN, int AccntNum, Double AccntBal, Double Interest){
-        System.out.println("Owner: " + OwnerN);
-        System.out.println("Number: " + AccntNum);
-        System.out.println("Balance: " + AccntBal);
+    public void PrintBankAccount(String OwnerN, int AccntNum, Double AccntBal, Double Interest){
+        super.PrintBankAccount(OwnerN, AccntNum, AccntBal);
         System.out.println("Interest: " + Interest);
     }
 }
