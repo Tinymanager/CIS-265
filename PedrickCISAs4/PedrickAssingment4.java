@@ -67,6 +67,13 @@ public class PedrickAssingment4 {
     }
 }
 
+/*
+ * Name: Ethan Pedrick
+ * CSU ID: 2835438
+ * CIS 265: Assignment 4
+ * Description: Reading and Printing Bank Accounts on files
+ */
+
 
 /*
  * Read the first text file
