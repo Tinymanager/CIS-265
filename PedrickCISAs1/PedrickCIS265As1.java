@@ -1,3 +1,4 @@
+package PedrickCISAs1;
 import java.util.Scanner;
 public class PedrickCIS265As1 {
     public static void main(String[] args) {
