@@ -42,3 +42,8 @@ public class FileCounter {
 /*
  * exit 0 closes with no error message, exit 1 and exit 2 give different messages
  */
+
+
+ /*
+  * 
+  */
