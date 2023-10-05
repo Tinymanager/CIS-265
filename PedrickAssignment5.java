@@ -2,8 +2,6 @@ import java.io.File;
 
 public class PedrickAssignment5 {
     public static void main(String[] args){
-        //System.out.println(args[0]);
-        //System.out.println(args[1]);
         if (args.length != 2){
             System.out.println("Usage: Java FileCounter <directory");
             System.exit(1);
@@ -30,7 +28,7 @@ public class PedrickAssignment5 {
                 if (file.isDirectory()){
                     //If its a directory - recursive
                     search(file, filename);
-                } else if (filename.contains(file.getName())){
+                } else if (file.getName().contains(filename)){
                     //If its a file, check the name
                     System.out.println("Found " + file.getAbsolutePath());
                 }
@@ -42,14 +40,9 @@ public class PedrickAssignment5 {
 
 
 /*
- * Take 2 command line parameters
- * First parameter is the folder to search for
- * Second is the filename to search for
- * (which may only be a partial name)
- * 
- * Must handle errors by printing an error message and showing the correct format
- * 
- * Needs to search recursively in the directory for the file
- * Print the full path of the file followed by a newline
- * 
+/*
+ * Name: Ethan Pedrick
+ * CSU ID: 2835438
+ * CIS 265: Assignment 5
+ * Description: Recursively searching a directory for a file
  */
