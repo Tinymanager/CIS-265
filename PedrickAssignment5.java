@@ -2,40 +2,41 @@ import java.io.File;
 
 public class PedrickAssignment5 {
     public static void main(String[] args){
-        System.out.println(args[0]);
-        if (args.length != 1){
+        //System.out.println(args[0]);
+        //System.out.println(args[1]);
+        if (args.length != 2){
             System.out.println("Usage: Java FileCounter <directory");
             System.exit(1);
         }
         String directoryPath = args[0];
         File directory = new File(directoryPath);
+        String FName = args[1];
 
         if (!directory.exists() || !directory.isDirectory()){
             System.out.println("Invalid Directory: " + directoryPath);
             System.exit(2);
         }
-        //int fileCount = search(directory);
-        System.out.println("Total files in directory: " + fileCount);
+        String filePath = search(directory, FName);
     }
 
 
-    public static search(File sourceFolder, String filename){
-        int count = 0;
+    public static String search(File sourceFolder, String filename){
+        String FullFilePath = " ";
 
         File[] files = sourceFolder.listFiles();
 
         if (files != null){
             for (File file : files){
-                if (file.isFile()){
-                    //If its a file, increase the count
-                    count++;
-                } else if (file.isDirectory()){
-                    //If its a directory recursively count files within int
-                    count += search(file);
+                if (file.isDirectory()){
+                    //If its a directory - recursive
+                    search(file, filename);
+                } else if (filename.contains(file.getName())){
+                    //If its a file, check the name
+                    System.out.println("Found " + file.getAbsolutePath());
                 }
             }
         }
-        return count;
+        return FullFilePath;
     }
 }
 
