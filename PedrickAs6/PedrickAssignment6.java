@@ -15,21 +15,23 @@ public class PedrickAssignment6 {
 
         File file = new File(args[0]);
         Map<String, Integer> wordfreq = new TreeMap<>();
-        Scanner scanner = new Scanner(file);
+        Scanner scanner = new Scanner(file).useDelimiter("\\W+");
 
         if (!file.exists()){
             System.out.println("File not found");
             System.exit(2);
         }
 
-        System.out.println("Words in ascending order: ");
         while (scanner.hasNext()){
             String currentword = scanner.next();
             wordfreq.put(currentword, wordfreq.getOrDefault(currentword, 0) + 1);
         }
         scanner.close();
 
-        System.out.println(wordfreq);
+        System.out.println("Words in ascending order: ");
+        for (String key : wordfreq.keySet()){
+            System.out.println(key + ": " + wordfreq.get(key));
+        }
 
     }
 }
