@@ -22,15 +22,12 @@ public class PedrickAssignment6 {
             System.exit(2);
         }
 
+        System.out.println("Words in ascending order: ");
         while (scanner.hasNext()){
             String currentword = scanner.next();
             wordfreq.put(currentword, wordfreq.getOrDefault(currentword, 0) + 1);
+            System.out.println(currentword + ": " + wordfreq.get(currentword));
         }
         scanner.close();
-        
-        System.out.println("Words in ascending order:");
-        for (int i=0; i<wordfreq.size(); i++){
-            System.out.println(wordfreq.get(i));
-        }
     }
 }
