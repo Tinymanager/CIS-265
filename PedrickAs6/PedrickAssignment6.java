@@ -26,8 +26,10 @@ public class PedrickAssignment6 {
         while (scanner.hasNext()){
             String currentword = scanner.next();
             wordfreq.put(currentword, wordfreq.getOrDefault(currentword, 0) + 1);
-            System.out.println(currentword + ": " + wordfreq.get(currentword));
         }
         scanner.close();
+
+        System.out.println(wordfreq);
+
     }
 }
