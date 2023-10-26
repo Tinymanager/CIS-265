@@ -13,13 +13,18 @@ public abstract class BankAccount {
         this.AccntBalance = AccntBal;
     }
 
-    public void PrintBankAccount(String OwnerN, int AccntNum, Double AccntBal){
+    /*public void PrintBankAccount(String OwnerN, int AccntNum, Double AccntBal){
         System.out.println("Owner: " + OwnerN);
         System.out.println("Number: " + AccntNum);
         System.out.println("Balance: " + AccntBal);
+    }*/
+
+    public int getAccountNumber(){
+        return AccntNumber;
     }
 
-    public int getNumber(){
-        return AccntNumber;
+    @Override
+    public String toString(){
+        return OwnerName + ", " + AccntNumber + ", " + AccntBalance;
     }
 }

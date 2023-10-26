@@ -4,6 +4,10 @@ import java.util.Comparator;
 
 public class AccountNumberComparator implements Comparator<BankAccount> {
 
+    @Override
+    public int compare(BankAccount a1, BankAccount a2){
+        return Integer.compare(a1.getAccountNumber(), a2.getAccountNumber());
+    }
     
 }
 
