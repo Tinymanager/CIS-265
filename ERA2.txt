@@ -1,0 +1,50 @@
+Problem 1:
+Array arr;
+if (exception outOfBounds){ //O(n)
+    Array arr2 = new Array[arr.length + 1];
+    for (i=0; arr2.length; i++){
+        arr2[i] = arr1[i];
+        if (i >= arr.length + 1){
+            arr2[i] = errored element;
+        }
+    }
+}
+
+class remove(Array arrr, index){    //O(n)
+    arrr[index] = nullify;
+    Array arr3 = new Array [arr.length - 1]
+    for (i=0; i<arr.length; i++){
+        if (arr[i] == nullify){
+            break;
+        } else {
+            arr3[i] = arr[i];
+        }
+    }
+}
+
+class get(Array arrr, index){   //O(n)
+    for (int i =0; i<arrr.length; i++){
+        if (i == index){
+            return arrr[i];
+        }
+    }
+}
+
+
+
+
+Problem 2:
+Node node = new Node();
+class Node(node, value){
+    this.value = value
+    this.next = node;
+}
+//The current node is given a value and can point to the next node 
+
+
+
+Problem 3:
+append(data):           //O(n) automatically places data at the end of the structure
+insert(data, position): //O(n) has to iterate through everything to move the others
+delete(data):           //O(n) has to iterate through everything to reach the data to be deleted
+search(data):           //O(n) has to search each data
