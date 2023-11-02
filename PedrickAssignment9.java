@@ -186,8 +186,8 @@ public class PedrickAssignment9 {
 }
 
 /*
- * Declare an array of 50,000 integers
- * Fill it with random ints
- * Calculate the time to sort it
- * Print the time in ms
+ * Name: Ethan Pedrick
+ * CSU ID: 2835438
+ * CIS 265: Assignment 9
+ * Description: Comparing the performance of various sorting algorithims
  */
