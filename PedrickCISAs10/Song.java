@@ -34,15 +34,20 @@ public class Song implements Comparable<Song> {
             System.exit(1);
         }
         File file = new File(args[0]);
-        Scanner scanner = new Scanner(file);
+        Scanner scanner = new Scanner(file).useDelimiter("\t"); //\t is tab
         if (!file.exists()){
             System.out.println("File not found");
             System.exit(2);
         }
         scanner.nextLine();
         Boolean moreSongs = true;
-        while (moreSongs = true){
-            String currentLine = scanner.nextLine();
+        int counter = 0;
+        while (scanner.hasNext()){
+            /*
+             * Adding a song to the BST:
+             * iterate through the txt file
+             * 
+             */
             //delimiter can split up a string
 
             //read until you find a line with just a "
