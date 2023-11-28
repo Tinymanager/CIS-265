@@ -6,82 +6,61 @@ import java.io.File;
 
 public class Song implements Comparable<Song> {
 
-    public static void main(String[] args) throws FileNotFoundException{
-     /*
-     * check if args=! 1, print message and exit if true
-     * define a file and scanner to read the file
-     * while(more songs left){
-     * read the next song from the file
-     * add it to the BST}
-     * 
-     * close the scanner
-     * prompt user for a title
-     * while title is not "Quit"{
-     * create a song with the title
-     * look for the song in the BST
-     * print if found, otherwise print not found message}
-     * 
-     * print "Bye!"
-     */
-
+    private static class Songs{
         String artist;
         String title;
         String link;
         String text;
 
+        public Songs(String artist, String title, String link, String text){
+            this.artist = artist;
+            this.title = title;
+            this.link = link;
+            this.text = text;
+        }
+
+        @Override
+        public String toString(){
+            return artist + "   " + title + "   " + link + "   " + text;
+        }
+    }
+
+
+    public static void main(String[] args) throws FileNotFoundException{
+
         if (args.length!= 1){
             System.out.println("Usage: PedrickAs10.Song.java input_file");
             System.exit(1);
         }
+
+        //BST for the songs
+        BST bst = new BST<>();
+
         File file = new File(args[0]);
-        Scanner scanner = new Scanner(file).useDelimiter("\t"); //\t is tab
+        Scanner scanner = new Scanner(file);
         if (!file.exists()){
             System.out.println("File not found");
             System.exit(2);
         }
         scanner.nextLine();
-        Boolean moreSongs = true;
-        int counter = 0;
-        while (scanner.hasNext()){
-            /*
-             * Adding a song to the BST:
-             * iterate through the txt file
-             * 
-             */
-            //delimiter can split up a string
 
-            //read until you find a line with just a "
-            //if there is a tab in the line, split it into multiple strings
-
+        while (scanner.hasNextLine()){
+            String[] parts = scanner.nextLine().split("\t");
+            String artist = parts[0];
+            String title = parts[1];
+            String link = parts[2];
+            StringBuilder textBuilder = new StringBuilder();
+            while (scanner.hasNextLine()){
+                String line = scanner.nextLine();
+                if (line.equals("\"")){
+                    break;
+                }
+                textBuilder.append(line).append("\n");
+            }
+            String text = textBuilder.toString().trim();
+            //bst.insert(new Songs(artist, title, link, text));
         }
-
-        //BST for the songs
-        BST<Song> bst = new BST<>();
-
     
-    /*
-     * Songs are read from the songs.txt file
-     * The BST is created for the songs and then used for searching
-     * Use Song s1 = bst.find(s) to search for a song
-     * 
-     * Creating the BST with songs:
-     * First line of the file is skipped
-     * Contains 57650 songs
-     * The artist, title, link, and text Strings are separated by tabs (\t)
-     * The final line of each text ends with just a "
-     * To test what the final line is use: s.equals(“\'”)
-     * Ignore songs with identical titles
-     * 
-     * Process:
-     * import all songs from the file to the BST
-     * Print the number of songs and unique titles
-     * prompt user to search for a title
-     * if title is found, print the artist, title, link, and text
-     * other wise print "Title x not found"
-     * must provide a toString() method for the Song class to print a song
-     * This just returns 1 String of everything formatted
-     * 
-     */
     }
 
     /*
