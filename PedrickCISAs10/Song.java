@@ -66,8 +66,7 @@ public class Song implements Comparable<Song> {
                 textBuilder.append(line).append("\n");
             }
             String text = textBuilder.toString().trim();
-            bst.insert(new Songs(artist, title, link, text));
-            //not sure whats wrong here
+            //bst.insert(new Songs(artist, title, link, text));<---not sure whats wrong here
         }
         scanner.close();
 
@@ -85,13 +84,13 @@ public class Song implements Comparable<Song> {
                 String link = "link";
                 String text = "text";
                 Songs s = new Songs(artist, title, link, text);
-                Songs s1 = bst.find(s);//not sure whats wrong here
+                /*Songs s1 = bst.find(s);<---not sure whats wrong here, rest of it works but relies on this line
                 if (s1 == null){
                     System.out.println("Title " + title + " not found.");
                 }
                 else {
                     System.out.println(s.toString());//Prints the song
-                }
+                }*/
             }
         }
     }
@@ -104,7 +103,8 @@ public class Song implements Comparable<Song> {
      */
     @Override
     public int compareTo(Song o) {
-        return bst.compareTo(o);
+        //return bst.compareTo(o);
+        return 1;//Couldn't get the BST thing to work
     }
 
 }
