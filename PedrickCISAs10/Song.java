@@ -108,3 +108,11 @@ public class Song implements Comparable<Song> {
     }
 
 }
+
+
+/*
+ * Name: Ethan Pedrick
+ * CSU ID: 2835438
+ * CIS 265: Assignment 10
+ * Description: Reading and adding songs from a text file to a BST, then searching the BST to find requested songs
+ */
