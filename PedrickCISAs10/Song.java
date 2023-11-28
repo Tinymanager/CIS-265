@@ -11,12 +11,20 @@ public class Song implements Comparable<Song> {
         String title;
         String link;
         String text;
-
+        
         public Songs(String artist, String title, String link, String text){
             this.artist = artist;
             this.title = title;
             this.link = link;
             this.text = text;
+        }
+
+        public String getTitle(){
+            return title;
+        }
+        public String setTitle(String NewTitle){
+            title = NewTitle;
+            return title;
         }
 
         @Override
@@ -34,7 +42,7 @@ public class Song implements Comparable<Song> {
         }
 
         //BST for the songs
-        BST bst = new BST<>();
+        BST<Song> bst = new BST<>();
 
         File file = new File(args[0]);
         Scanner scanner = new Scanner(file);
@@ -58,9 +66,34 @@ public class Song implements Comparable<Song> {
                 textBuilder.append(line).append("\n");
             }
             String text = textBuilder.toString().trim();
-            //bst.insert(new Songs(artist, title, link, text));
+            bst.insert(new Songs(artist, title, link, text));
+            //not sure whats wrong here
         }
-    
+        scanner.close();
+
+        Scanner input = new Scanner(System.in);
+        Boolean running = true;
+        while(running == true){
+            System.out.println("Please input the title of the song (Quit to exit): ");
+            String title = input.nextLine();
+            if (title.equals("Quit")){
+                System.out.println("Bye!");
+                break;
+            }
+            else {
+                String artist = "artist";
+                String link = "link";
+                String text = "text";
+                Songs s = new Songs(artist, title, link, text);
+                Songs s1 = bst.find(s);//not sure whats wrong here
+                if (s1 == null){
+                    System.out.println("Title " + title + " not found.");
+                }
+                else {
+                    System.out.println(s.toString());//Prints the song
+                }
+            }
+        }
     }
 
     /*
@@ -71,8 +104,7 @@ public class Song implements Comparable<Song> {
      */
     @Override
     public int compareTo(Song o) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+        return bst.compareTo(o);
     }
 
 }
